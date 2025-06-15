@@ -1,20 +1,8 @@
 <script setup lang="ts">
-import { SpeedInsights } from '@vercel/speed-insights/nuxt'
 import { initFlowbite } from 'flowbite'
 
 const { $pwa } = useNuxtApp()
 
-const $route = useRoute()
-  
-useHead(() => {
-  link: [
-    {
-      rel: 'canonical',
-      href: 'https://www.robocomp.info' + $route.path
-    }
-  ]
-})
-  
 onMounted(async () => {
   if (!$pwa) {
     return
@@ -48,7 +36,6 @@ onBeforeMount(() => {
 
 <template>
   <div>
-    <SpeedInsights />
     <VitePwaManifest />
 
     <NuxtLayout>

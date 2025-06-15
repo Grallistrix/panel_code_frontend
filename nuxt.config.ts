@@ -1,5 +1,3 @@
-import { resolve } from 'path'
-
 import { APP_TITLE, APP_TITLE_SHORT, APP_URL } from './settings/constants'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -184,18 +182,6 @@ export default defineNuxtConfig({
     fallback: 'dark'
   },
 
-  content: {
-    documentDriven: true,
-    ignores: ['README.md', 'LICENSE.md', 'CHANGELOG.md', 'CONTRIBUTING.md', 'CODE_OF_CONDUCT.md', 'SECURITY.md'],
-    sources: {
-      content: {
-        driver: 'fs',
-        prefix: '',
-        base: resolve(__dirname, 'content/content')
-      }
-    }
-  },
-
   pwa: {
     devOptions: { enabled: true },
     registerType: 'autoUpdate',
@@ -204,7 +190,6 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxtjs/robots',
-    '@nuxt/content',
     '@nuxtjs/color-mode',
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
@@ -235,7 +220,8 @@ export default defineNuxtConfig({
     public: {
       APP_URL,
       APP_TITLE,
-      APP_TITLE_SHORT
+      APP_TITLE_SHORT,
+      API_URL: 'http://localhost:8000'
     }
   },
 

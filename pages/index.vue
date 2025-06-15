@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import EmptyDoc from '~/components/slots/empty-doc.vue'
-import NotFound from '~/components/slots/not-found.vue'
-
 const $runtime = useRuntimeConfig()
 
 useHead({
@@ -10,17 +7,7 @@ useHead({
 </script>
 
 <template>
-  <div class="index-page content-page markdown-content flex flex-col flex-1">
-    <main class="container mx-auto my-8 px-4 lg:px-0 flex-1">
-      <content-doc>
-        <template #not-found>
-          <not-found />
-        </template>
-
-        <template #empty>
-          <empty-doc />
-        </template>
-      </content-doc>
-    </main>
+  <div class="flex flex-col flex-1 index-page">
+    <h1>dupa</h1>
   </div>
 </template>

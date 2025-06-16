@@ -33,7 +33,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^14.0.0",
-    "chart.js": "^4.4.4",
+    "chart.js": "^4.5.0",
     "chartjs-adapter-moment": "^1.0.1",
     "chartjs-plugin-annotation": "^3.0.1",
     "chartjs-plugin-datalabels": "^2.2.0",

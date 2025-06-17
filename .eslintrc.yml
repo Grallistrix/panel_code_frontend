@@ -38,6 +38,7 @@ rules:
       caughtErrorsIgnorePattern: '^_'
   prettier/prettier:
     - error
+  func-call-spacing: off
   quote-props: off
   arrow-parens: off
   vue/singleline-html-element-content-newline: off

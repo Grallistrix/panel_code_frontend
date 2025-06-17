@@ -1,4 +1,5 @@
 export default defineStore('user', {
+  persist: true,
   state: () => ({
     username: '',
     password: '',

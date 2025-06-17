@@ -32,12 +32,7 @@ const chartData = computed(() => {
   const datasets = labels.value.map((label) => {
     return {
       label,
-      data: Object.entries($props.data).flatMap(([_, values]) =>
-        values.flatMap((v, i) => {
-          const value = v[label.split(' - ')[1]]
-          return value !== undefined ? { x: i, y: value } : []
-        })
-      ),
+      data: $props.data[label.split(' - ')[0]].map((v) => v[label.split(' - ')[1]]),
       borderColor: getRandomColor(),
       backgroundColor: getRandomColor(),
       fill: false,
@@ -101,7 +96,6 @@ const CHART_OPTIONS = {
       <div v-if="chartData.datasets.length === 0" class="no-data">No data available</div>
       <div v-else>
         <Line :data="chartData" style="height: 500px; width: calc(100vw - 3rem)" :options="CHART_OPTIONS" />
-        {{ chartData }}
       </div>
     </div>
   </div>

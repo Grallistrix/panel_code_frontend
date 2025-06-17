@@ -17,15 +17,39 @@ function onTimeSelectorChange({ option, recordsCount }: { option: string; record
 const tmpChartData: Record<string, Record<string, number>[]> = Object.fromEntries(
   Object.entries({
     '1': [
-      { temperature: '17.3', humidity: '54.4' },
-      { temperature: '24.2', humidity: '46.4' },
-      { temperature: '18.4', humidity: '42.3' },
-      { temperature: '20.2', humidity: '57.3' },
-      { temperature: '18.6', humidity: '61.9' },
-      { temperature: '25.5', humidity: '43.9' },
-      { temperature: '25.9', humidity: '36.5' }
+      { temperature: 28, humidity: 86.45 },
+      { temperature: 28, humidity: 71.25 },
+      { temperature: 28, humidity: 71.25 },
+      { temperature: 28, humidity: 55.1 },
+      { temperature: 28, humidity: 54.15 },
+      { temperature: 26, humidity: 54.15 },
+      { temperature: 26, humidity: 54.15 },
+      { temperature: 26, humidity: 54.15 },
+      { temperature: 26, humidity: 54.15 },
+      { temperature: 27, humidity: 88.35 },
+      { temperature: 26, humidity: 53.2 },
+      { temperature: 26, humidity: 54.15 },
+      { temperature: 26, humidity: 54.15 },
+      { temperature: 26, humidity: 54.15 },
+      { temperature: 26, humidity: 54.15 }
     ],
-    '2': []
+    '2': [
+      { temperature: 26, humidity: 54.15 },
+      { temperature: 26, humidity: 55.1 },
+      { temperature: 26, humidity: 55.1 },
+      { temperature: 26, humidity: 55.1 },
+      { temperature: 26, humidity: 55.1 },
+      { temperature: 26, humidity: 55.1 },
+      { temperature: 26, humidity: 55.1 },
+      { temperature: 28, humidity: 53.2 },
+      { temperature: 27, humidity: 52.25 },
+      { temperature: 27, humidity: 52.25 },
+      { temperature: 27, humidity: 52.25 },
+      { temperature: 26, humidity: 54.15 },
+      { temperature: 26, humidity: 54.15 },
+      { temperature: 26, humidity: 54.15 },
+      { temperature: 26, humidity: 69.35 }
+    ]
   }).map(([k, v]) => [k, v.map((s) => Object.fromEntries(Object.entries(s).map(([kk, vv]) => [kk, Number(vv)])))])
 )
 
@@ -76,7 +100,7 @@ const { data } = useLazyAsyncData(
     <section class="bg-gray-50 dark:bg-gray-900">
       <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
         <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-          Witaj w panleu IOT
+          Witaj w panelu IOT
         </h1>
         <div class="camera-stream">
           <h2>Podgląd kamery</h2>
@@ -90,8 +114,8 @@ const { data } = useLazyAsyncData(
     </section>
 
     <section v-if="data" class="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
-      <SensorChart :data="data" />
       <!-- <SensorChart :data="tmpChartData" /> -->
+      <SensorChart :data="data" />
     </section>
   </div>
 </template>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { initFlowbite } from 'flowbite'
+import 'leaflet/dist/leaflet.css'
 
 const { $pwa } = useNuxtApp()
 
